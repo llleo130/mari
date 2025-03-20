@@ -37,10 +37,19 @@
             box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         .mood-fill {
-            height: 100%;
-            width: 90%; /* Настроение на 100% */
+            height: 90%;
+            width: 90%; /* Начальное значение 100% */
             background: linear-gradient(90deg, #ff4a57, #ff7eb3);
             transition: width 0.5s;
+        }
+        input {
+            width: 80%;
+            padding: 8px;
+            margin-top: 10px;
+            border: 2px solid #ff4a57;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 16px;
         }
         img {
             width: 100%;
@@ -53,14 +62,26 @@
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
+    <script>
+        function updateMood() {
+            let moodValue = document.getElementById("moodInput").value;
+            let moodFill = document.querySelector(".mood-fill");
+            let percentage = parseInt(moodValue);
+            
+            if (!isNaN(percentage) && percentage >= 0 && percentage <= 100) {
+                moodFill.style.width = percentage + "%";
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <h1>Шкала настроения Мари</h1>
+        <input id="moodInput" type="text" placeholder="Введите %" oninput="updateMood()">
         <div class="mood-bar">
             <div class="mood-fill"></div>
         </div>
-        <img src="mari.jpg" alt="Фотография Мари">
+        <img src="6eefd044-420c-43cb-9b4f-3a95dd659634.jpg" alt="Фотография Мари">
     </div>
 </body>
 </html>
