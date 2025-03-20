@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шкала настроения Мари</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background: #fff;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 450px;
+            animation: fadeIn 1s;
+        }
+        h1 {
+            color: #d90429;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+        .mood-bar {
+            width: 100%;
+            background: #eee;
+            border-radius: 15px;
+            height: 25px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .mood-fill {
+            height: 100%;
+            width: 100%; /* Настроение на 100% */
+            background: linear-gradient(90deg, #ff4a57, #ff7eb3);
+            transition: width 0.5s;
+        }
+        img {
+            width: 100%;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Шкала настроения Мари</h1>
+        <div class="mood-bar">
+            <div class="mood-fill"></div>
+        </div>
+        <img src="6eefd044-420c-43cb-9b4f-3a95dd659634.jpg" alt="Фотография Мари">
+    </div>
+</body>
+</html>
